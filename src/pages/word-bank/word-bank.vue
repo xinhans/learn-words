@@ -4,14 +4,14 @@
 		<view class="header">
 			<text class="header-title">词库</text>
 			<button class="icon-button">
-				<text class="material-symbols-outlined text-primary">add</text>
+				<view class="i-mdi-plus text-primary text-[48rpx]" />
 			</button>
 		</view>
 
 		<!-- Search Bar -->
 		<view class="search-bar-container">
 			<view class="search-bar">
-				<text class="material-symbols-outlined search-icon">search</text>
+				<view class="i-mdi-magnify search-icon" />
 				<input class="search-input" placeholder="搜索单词、假名、释义..." />
 			</view>
 		</view>
@@ -19,19 +19,19 @@
 		<!-- Filter Chips -->
 		<scroll-view scroll-x class="filter-chips-container" :show-scrollbar="false">
 			<button class="chip active">
-				<text class="material-symbols-outlined chip-icon">history</text>
+				<view class="i-mdi-history chip-icon" />
 				<text>最近添加</text>
 			</button>
 			<button class="chip">
-				<text class="material-symbols-outlined chip-icon">sort_by_alpha</text>
+				<view class="i-mdi-sort-alphabetical-variant chip-icon" />
 				<text>五十音</text>
 			</button>
 			<button class="chip">
-				<text class="material-symbols-outlined chip-icon">trending_up</text>
+				<view class="i-mdi-trending-up chip-icon" />
 				<text>学习进度</text>
 			</button>
 			<button class="chip">
-				<text class="material-symbols-outlined chip-icon">bookmark</text>
+				<view class="i-mdi-bookmark chip-icon" />
 				<text>仅收藏</text>
 			</button>
 		</scroll-view>
@@ -125,7 +125,6 @@ const getProgressWidth = (progress) => {
 }
 .text-primary {
 	color: var(--primary);
-	font-size: 48rpx;
 }
 
 /* Search Bar */
@@ -192,6 +191,9 @@ const getProgressWidth = (progress) => {
 }
 .chip-icon {
 	font-size: 36rpx;
+}
+.chip.active .chip-icon {
+	color: white;
 }
 
 /* Word List */

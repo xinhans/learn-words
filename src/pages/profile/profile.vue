@@ -4,7 +4,7 @@
 		<view class="header">
 			<text class="header-title">我的</text>
 			<button class="icon-button">
-				<text class="material-symbols-outlined">notifications</text>
+				<view class="i-mdi-bell-outline text-2xl" />
 			</button>
 		</view>
 
@@ -15,7 +15,7 @@
 					<view class="avatar-glow"></view>
 					<view class="avatar" :style="{ backgroundImage: 'url(' + user.avatar + ')' }"></view>
 					<button class="edit-button">
-						<text class="material-symbols-outlined" style="font-size: 36rpx;">edit</text>
+						<view class="i-mdi-pencil text-[36rpx]" />
 					</button>
 				</view>
 				<view class="user-info">
@@ -50,13 +50,13 @@
 				<view class="option-card-progress">
 					<view class="option-header">
 						<view class="option-icon-bg primary">
-							<text class="material-symbols-outlined">flag</text>
+							<view class="i-mdi-flag text-3xl" />
 						</view>
 						<view class="option-text">
 							<text class="option-title">今日目标</text>
 							<text class="option-subtitle">已完成 30 / 50 个单词</text>
 						</view>
-						<text class="material-symbols-outlined chevron">chevron_right</text>
+						<view class="i-mdi-chevron-right chevron" />
 					</view>
 					<view class="progress-bar-container">
 						<view class="progress-bar" style="width: 60%;"></view>
@@ -67,24 +67,24 @@
 				<view class="option-list">
 					<button class="option-item">
 						<view class="option-icon-bg orange">
-							<text class="material-symbols-outlined">notifications_active</text>
+							<view class="i-mdi-bell-ring-outline text-3xl" />
 						</view>
 						<text class="option-title">学习提醒</text>
-						<text class="material-symbols-outlined chevron">chevron_right</text>
+						<view class="i-mdi-chevron-right chevron" />
 					</button>
 					<button class="option-item">
 						<view class="option-icon-bg gray">
-							<text class="material-symbols-outlined">settings</text>
+							<view class="i-mdi-cog-outline text-3xl" />
 						</view>
 						<text class="option-title">设置</text>
-						<text class="material-symbols-outlined chevron">chevron_right</text>
+						<view class="i-mdi-chevron-right chevron" />
 					</button>
 					<button class="option-item">
 						<view class="option-icon-bg purple">
-							<text class="material-symbols-outlined">help</text>
+							<view class="i-mdi-help-circle-outline text-3xl" />
 						</view>
 						<text class="option-title">帮助与反馈</text>
-						<text class="material-symbols-outlined chevron">chevron_right</text>
+						<view class="i-mdi-chevron-right chevron" />
 					</button>
 				</view>
 

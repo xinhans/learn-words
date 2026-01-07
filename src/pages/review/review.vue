@@ -3,11 +3,11 @@
 		<!-- Header -->
 		<view class="header">
 			<button class="icon-button">
-				<text class="material-symbols-outlined">close</text>
+				<view class="i-mdi-close text-2xl" />
 			</button>
 			<text class="header-title">复习模式</text>
 			<button class="icon-button">
-				<text class="material-symbols-outlined">settings</text>
+				<view class="i-mdi-cog-outline text-2xl" />
 			</button>
 		</view>
 
@@ -30,7 +30,7 @@
 				<view class="question-content">
 					<text class="question-word jp-font">桜</text>
 					<button class="pronunciation-button">
-						<text class="material-symbols-outlined icon">volume_up</text>
+						<view class="i-mdi-volume-high text-primary text-[40rpx]" />
 						<text class="kana jp-font">さくら</text>
 					</button>
 				</view>
@@ -49,7 +49,7 @@
 		<!-- Help Button -->
 		<view class="help-section">
 			<button class="help-button">
-				<text class="material-symbols-outlined">help</text>
+				<view class="i-mdi-help-circle-outline text-[36rpx]" />
 				<text>不认识这个词</text>
 			</button>
 		</view>
@@ -186,10 +186,6 @@ const options = ref([
 	border: 1rpx solid #e5e7eb;
 	box-shadow: 0 2rpx 4rpx rgba(0,0,0,0.05);
 }
-.pronunciation-button .icon {
-	color: var(--primary);
-	font-size: 40rpx;
-}
 .pronunciation-button .kana {
 	font-size: 28rpx;
 	color: #4b5563;
@@ -271,8 +267,5 @@ const options = ref([
 .help-button:hover {
 	background-color: #f3f4f6;
 	color: #4b5563;
-}
-.help-button .material-symbols-outlined {
-	font-size: 36rpx;
 }
 </style>

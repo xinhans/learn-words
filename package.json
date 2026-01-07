@@ -61,7 +61,13 @@
     "@dcloudio/uni-cli-shared": "3.0.0-4080720251210001",
     "@dcloudio/uni-stacktracey": "3.0.0-4080720251210001",
     "@dcloudio/vite-plugin-uni": "3.0.0-4080720251210001",
+    "@iconify-json/mdi": "^1.2.3",
+    "@unocss-applet/preset-applet": "^0.12.2",
+    "@unocss-applet/transformer-applet": "^0.5.5",
+    "@unocss/preset-icons": "^66.5.12",
+    "@unocss/preset-uno": "^66.5.12",
     "@vue/runtime-core": "^3.4.21",
+    "unocss": "^66.5.12",
     "vite": "5.2.8"
   }
 }

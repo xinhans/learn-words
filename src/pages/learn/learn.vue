@@ -3,14 +3,14 @@
 		<!-- Header -->
 		<view class="header">
 			<button class="icon-button">
-				<text class="material-symbols-outlined">arrow_back</text>
+				<view class="i-mdi-arrow-left text-2xl" />
 			</button>
 			<view class="tabs">
 				<button class="tab active">学习</button>
 				<button class="tab">复习</button>
 			</view>
 			<button class="icon-button">
-				<text class="material-symbols-outlined">tune</text>
+				<view class="i-mdi-tune-variant text-2xl" />
 			</button>
 		</view>
 
@@ -33,7 +33,7 @@
 				<view class="word-card-image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBDgC3P4dDZp_eU-my3WwCsBwETmqbHxDnPrGvhbQ7YSVPrdRBILci-kAPdXnNKun9PQp6uNrFPnsUCF23ZwetEmr2OYmZSF-1a-fkxWPWF010CzA5ejh0o3QKruxCDUkML1EmjiYekHlzTwDxuZ9Ourha39W5wDC-m_0A-dRLtXn3CKxF8KuNynu0vwjMHFlgKj8A_3toDtPMMqTRhRy3B3x_6GzsKWS9ysxU577oarrxboxhahXuae0L5UkH0DJtWsMu2qwn0UQ');">
 					<view class="image-overlay"></view>
 					<button class="bookmark-button">
-						<text class="material-symbols-outlined" style="font-size: 36rpx;">bookmark_border</text>
+						<view class="i-mdi-bookmark-outline text-[36rpx]" />
 					</button>
 				</view>
 				<scroll-view scroll-y class="word-details">
@@ -42,7 +42,7 @@
 						<view class="pronunciation">
 							<text class="kana jp-font">こもれび [0]</text>
 							<button class="volume-button">
-								<text class="material-symbols-outlined filled">volume_up</text>
+								<view class="i-mdi-volume-high" />
 							</button>
 						</view>
 					</view>
@@ -64,12 +64,12 @@
 		<!-- Action Buttons -->
 		<view class="action-buttons">
 			<button class="action-button unknown">
-				<text class="material-symbols-outlined icon">close</text>
+				<view class="i-mdi-close icon" />
 				<text class="text">不认识</text>
 			</button>
 			<button class="action-button known">
 				<text class="text">掌握</text>
-				<text class="material-symbols-outlined icon">check</text>
+				<view class="i-mdi-check icon" />
 			</button>
 		</view>
 	</view>
