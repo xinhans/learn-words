@@ -7,8 +7,8 @@
 - **框架**: uni-app 3.0
 - **前端**: Vue 3 (Composition API)
 - **语言**: JavaScript
-- **样式**: CSS3 (CSS Variables)
-- **图标**: Material Symbols
+- **样式**: UnoCSS
+- **图标**: UnoCSS Icons (MDI)
 - **构建工具**: Vite
 
 ## 📁 项目结构
@@ -34,7 +34,8 @@
 ├── dist/                      # 构建输出目录
 ├── index.html                 # HTML 入口
 ├── package.json               # 项目依赖
-├── vite.config.js             # Vite 配置
+├── vite.config.mjs            # Vite 配置
+├── unocss.config.js           # UnoCSS 配置
 └── .gitignore                 # Git 忽略文件
 ```
 
