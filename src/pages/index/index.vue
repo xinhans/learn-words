@@ -89,7 +89,6 @@
 </template>
 
 <script setup>
-import { uni } from '@dcloudio/uni-app'
 
 const navigateToLearn = () => {
   console.log('Navigating to Learn page...');
