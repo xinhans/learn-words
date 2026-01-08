@@ -23,6 +23,13 @@
 			"style": {
 				"navigationStyle": "custom"
 			}
+		},
+		{
+			"path": "pages/test/test",
+			"style": {
+				"navigationBarTitleText": "UnoCSS测试",
+				"navigationStyle": "custom"
+			}
 		}
 	],
 	"globalStyle": {

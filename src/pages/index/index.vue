@@ -10,7 +10,7 @@
 				</view>
 			</view>
 			<button class="icon-button" @click="handleNotifications">
-				<text class="material-symbols-outlined">notifications</text>
+				<text class="i-mdi-bell"></text>
 			</button>
 		</view>
 
@@ -24,7 +24,7 @@
 						<text class="card-subtitle">已连续打卡 5 天，继续加油！</text>
 					</view>
 					<view class="icon-badge">
-						<text class="material-symbols-outlined text-primary" style="font-size: 40rpx;">emoji_events</text>
+						<text class="i-mdi-trophy text-primary"></text>
 					</view>
 				</view>
 				<view class="progress-details">
@@ -55,7 +55,7 @@
 								<text class="word-kana">いちごいちえ</text>
 							</view>
 							<button class="icon-button-light" @click="handlePlaySound">
-								<text class="material-symbols-outlined">volume_up</text>
+								<text class="i-mdi-volume-high"></text>
 							</button>
 						</view>
 						<text class="word-definition">一生只有一次的难得机缘。教导人们要珍惜当下的时光和眼前的人。</text>
@@ -67,7 +67,7 @@
 			<view class="section action-cards">
 				<button class="action-card primary-card" @click="navigateToLearn">
 					<view class="card-icon-bg">
-						<text class="material-symbols-outlined">auto_stories</text>
+						<text class="i-mdi-book-open"></text>
 					</view>
 					<view>
 						<text class="action-card-title text-white">开始学习</text>
@@ -76,7 +76,7 @@
 				</button>
 				<button class="action-card secondary-card" @click="navigateToReview">
 					<view class="card-icon-bg-alt">
-						<text class="material-symbols-outlined text-primary">update</text>
+						<text class="i-mdi-refresh text-primary"></text>
 					</view>
 					<view>
 						<text class="action-card-title">复习模式</text>
@@ -175,9 +175,7 @@ const handlePlaySound = () => {
 .icon-button:hover {
 	background-color: rgba(0,0,0,0.05);
 }
-.material-symbols-outlined {
-	font-size: 48rpx;
-}
+
 
 /* Main Content */
 .main-content {

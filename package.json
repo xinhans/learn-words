@@ -1,6 +1,7 @@
 {
   "name": "uni-preset-vue",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "dev:custom": "uni -p",
     "dev:h5": "uni",
@@ -52,6 +53,9 @@
     "@dcloudio/uni-mp-weixin": "3.0.0-4080720251210001",
     "@dcloudio/uni-mp-xhs": "3.0.0-4080720251210001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-4080720251210001",
+    "@unocss-applet/preset-applet": "^0.12.2",
+    "@unocss-applet/transformer-applet": "^0.5.5",
+    "unocss": "^66.5.12",
     "vue": "^3.4.21",
     "vue-i18n": "^9.1.9"
   },
@@ -61,7 +65,12 @@
     "@dcloudio/uni-cli-shared": "3.0.0-4080720251210001",
     "@dcloudio/uni-stacktracey": "3.0.0-4080720251210001",
     "@dcloudio/vite-plugin-uni": "3.0.0-4080720251210001",
+    "@iconify-json/mdi": "^1.2.3",
+    "@unocss/preset-icons": "^66.5.12",
+    "@unocss/vite": "^66.5.12",
     "@vue/runtime-core": "^3.4.21",
+    "google-fonts-helper": "^3.7.3",
+    "google-webfonts-helper": "^0.0.1-security",
     "vite": "5.2.8"
   }
 }

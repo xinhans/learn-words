@@ -7,14 +7,16 @@
 - **框架**: uni-app 3.0
 - **前端**: Vue 3 (Composition API)
 - **语言**: JavaScript
-- **样式**: CSS3 (CSS Variables)
-- **图标**: Material Symbols
+- **样式**: CSS3 (CSS Variables)、UnoCSS + @unocss-applet (小程序适配)
+- **图标**: Material Design Icons (MDI)
 - **构建工具**: Vite
+- **国际化**: vue-i18n (支持多语言)
 
 ## 📁 项目结构
 
 ```
 ├── src/
+│   ├── components/            # 通用组件
 │   ├── pages/                  # 页面组件
 │   │   ├── index/             # 首页
 │   │   ├── learn/             # 学习页面
@@ -27,14 +29,17 @@
 │   │   └── request.js         # 网络请求
 │   ├── static/                # 静态资源
 │   │   └── logo.png           # 应用图标
+│   ├── ref/                   # 参考资料或示例
 │   ├── App.vue                # 根组件
 │   ├── main.js                # 入口文件
 │   ├── pages.json             # 页面配置
-│   └── manifest.json          # 应用配置
+│   ├── manifest.json          # 应用配置
+│   └── uni.scss               # 全局样式
 ├── dist/                      # 构建输出目录
 ├── index.html                 # HTML 入口
 ├── package.json               # 项目依赖
 ├── vite.config.js             # Vite 配置
+├── unocss.config.js           # UnoCSS 配置
 └── .gitignore                 # Git 忽略文件
 ```
 
@@ -138,6 +143,39 @@ npm run build:app-plus    # App 平台
 
 ### 样式变量
 修改 `src/App.vue` 中的 CSS 变量可以自定义主题。
+
+### UnoCSS 配置
+修改 `unocss.config.js` 文件可以配置 UnoCSS 的预设和转换器：
+
+```javascript
+import { defineConfig } from 'unocss'
+import { presetApplet } from '@unocss-applet/preset-applet'
+import presetIcons from '@unocss/preset-icons'
+import transformerApplet from '@unocss-applet/transformer-applet'
+
+export default defineConfig({
+  presets: [
+    presetApplet(), // 适配小程序的预设
+    presetIcons({
+      scale: 1, // 图标缩放比例
+      warn: true, // 图标不存在时显示警告
+    }), // 图标预设
+  ],
+  transformers: [
+    transformerApplet(), // 小程序转换器
+  ],
+})
+```
+
+#### 使用 Material Design Icons
+项目使用 Material Design Icons (MDI) 图标库，可以通过以下方式使用：
+
+```vue
+<!-- 示例：使用 bell 图标 -->
+<text class="i-mdi-bell"></text>
+```
+
+图标名称可以在 [Material Design Icons](https://materialdesignicons.com/) 官网查找。
 
 ## 📝 开发注意事项
 

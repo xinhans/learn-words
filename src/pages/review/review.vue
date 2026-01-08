@@ -3,11 +3,11 @@
 		<!-- Header -->
 		<view class="header">
 			<button class="icon-button">
-				<text class="material-symbols-outlined">close</text>
+				<text class="i-mdi-close"></text>
 			</button>
 			<text class="header-title">复习模式</text>
 			<button class="icon-button">
-				<text class="material-symbols-outlined">settings</text>
+				<text class="i-mdi-cog"></text>
 			</button>
 		</view>
 
@@ -30,7 +30,7 @@
 				<view class="question-content">
 					<text class="question-word jp-font">桜</text>
 					<button class="pronunciation-button">
-						<text class="material-symbols-outlined icon">volume_up</text>
+						<text class="i-mdi-volume-high icon"></text>
 						<text class="kana jp-font">さくら</text>
 					</button>
 				</view>
@@ -49,7 +49,7 @@
 		<!-- Help Button -->
 		<view class="help-section">
 			<button class="help-button">
-				<text class="material-symbols-outlined">help</text>
+				<text class="i-mdi-help-circle"></text>
 				<text>不认识这个词</text>
 			</button>
 		</view>
@@ -272,7 +272,7 @@ const options = ref([
 	background-color: #f3f4f6;
 	color: #4b5563;
 }
-.help-button .material-symbols-outlined {
+.help-button .i-mdi {
 	font-size: 36rpx;
 }
 </style>
