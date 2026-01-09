@@ -11,6 +11,41 @@
 - **图标**: Material Design Icons (MDI)
 - **构建工具**: Vite
 - **国际化**: vue-i18n (支持多语言)
+- **数据库**: MySQL 8.0+ (支持多平台部署)
+
+## 📊 数据库结构
+
+### 表结构概览
+
+应用使用MySQL数据库，包含7个核心表：
+
+| 表名 | 描述 | 主要功能 |
+|------|------|---------|
+| `users` | 用户表 | 存储用户基本信息 |
+| `word_banks` | 词库表 | 存储词库基本信息 |
+| `words` | 单词表 | 存储单词详细信息（日语、假名、释义等） |
+| `user_word_progress` | 用户单词学习进度表 | 跟踪用户单词学习状态和掌握情况 |
+| `user_settings` | 用户设置表 | 存储用户个性化设置 |
+| `learning_reminders` | 学习提醒表 | 管理用户学习提醒 |
+| `feedback` | 用户反馈表 | 收集用户反馈信息 |
+
+### 数据库初始化
+
+使用以下命令初始化数据库：
+
+```bash
+# 1. 创建数据库
+CREATE DATABASE learn_words;
+
+# 2. 导入数据库脚本
+mysql -u root -p learn_words < database.sql
+```
+
+### 数据库兼容性
+
+- **最低版本要求**: MySQL 5.6.5+
+- **推荐版本**: MySQL 8.0+
+- **支持平台**: Windows、Linux、macOS
 
 ## 📁 项目结构
 
@@ -86,7 +121,27 @@ npm run build:app-plus    # App 平台
 
 ## 📦 部署方式
 
-### H5 部署
+### 1. 数据库部署
+
+#### 本地部署
+
+```bash
+# 1. 安装 MySQL 8.0+
+# 2. 创建数据库
+CREATE DATABASE learn_words;
+# 3. 导入数据库脚本
+mysql -u root -p learn_words < database.sql
+```
+
+#### 云服务部署
+
+1. **阿里云 RDS**: 创建 MySQL 8.0 实例并导入数据库脚本
+2. **腾讯云 CDB**: 创建 MySQL 8.0 实例并导入数据库脚本
+3. **AWS RDS**: 创建 MySQL 8.0 实例并导入数据库脚本
+
+### 2. 应用部署
+
+#### H5 部署
 
 1. 构建 H5 版本
    ```bash
@@ -96,6 +151,7 @@ npm run build:app-plus    # App 平台
 2. 部署到服务器
    - 将 `dist/build/h5/` 目录下的所有文件上传到您的 Web 服务器
    - 确保服务器支持 SPA 应用的路由模式（需要配置 404 页面指向 index.html）
+   - 配置数据库连接参数
 
 ### 小程序部署
 
@@ -135,16 +191,51 @@ npm run build:app-plus    # App 平台
 
 ## 🔧 配置说明
 
-### 页面配置
+### 1. 数据库连接配置
+
+根据部署环境修改数据库连接参数：
+
+#### 本地开发配置
+
+```javascript
+// 示例配置（请根据实际环境修改）
+export const dbConfig = {
+  host: 'localhost',
+  port: 3306,
+  user: 'root',
+  password: 'password',
+  database: 'learn_words',
+  charset: 'utf8mb4'
+}
+```
+
+#### 生产环境配置
+
+```javascript
+// 示例配置（请根据实际环境修改）
+export const dbConfig = {
+  host: 'your-database-host',
+  port: 3306,
+  user: 'database-user',
+  password: 'database-password',
+  database: 'learn_words',
+  charset: 'utf8mb4',
+  ssl: {
+    rejectUnauthorized: true
+  }
+}
+```
+
+### 2. 页面配置
 修改 `src/pages.json` 文件可以配置页面路由、底部导航栏等。
 
-### 全局状态
+### 3. 全局状态
 修改 `src/store/index.js` 文件可以管理全局状态。
 
-### 样式变量
+### 4. 样式变量
 修改 `src/App.vue` 中的 CSS 变量可以自定义主题。
 
-### UnoCSS 配置
+### 5. UnoCSS 配置
 修改 `unocss.config.js` 文件可以配置 UnoCSS 的预设和转换器：
 
 ```javascript
