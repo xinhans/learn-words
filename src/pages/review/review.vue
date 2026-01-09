@@ -106,7 +106,7 @@ const options = ref([
 
 /* Progress Section */
 .progress-section {
-	padding: 16rpx 48rpx;
+	padding: 16rpx var(--spacing-base);
 }
 .progress-header {
 	display: flex;
@@ -146,7 +146,7 @@ const options = ref([
 	flex: 1;
 	display: flex;
 	flex-direction: column;
-	padding: 48rpx;
+	padding: 0 var(--spacing-base);
 	gap: 48rpx;
 }
 .question-area {
@@ -254,7 +254,7 @@ const options = ref([
 .help-section {
 	display: flex;
 	justify-content: center;
-	padding: 16rpx 48rpx;
+	padding: 16rpx var(--spacing-base);
 }
 .help-button {
 	display: flex;

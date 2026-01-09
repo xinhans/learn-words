@@ -53,8 +53,9 @@
 							<text class="i-mdi-flag"></text>
 						</view>
 						<view class="option-text">
-							<text class="option-title">今日目标</text>
-							<text class="option-subtitle">已完成 30 / 50 个单词</text>
+							<text>当前词库</text>
+							<text class="option-title">初级日语</text>
+							<text class="option-subtitle">已完成 30 / 2000 个单词</text>
 						</view>
 						<text class="i-mdi-chevron-right chevron"></text>
 					</view>
@@ -72,13 +73,7 @@
 						<text class="option-title">学习提醒</text>
 						<text class="i-mdi-chevron-right chevron"></text>
 					</button>
-					<button class="option-item">
-						<view class="option-icon-bg gray">
-							<text class="i-mdi-cog"></text>
-						</view>
-						<text class="option-title">设置</text>
-						<text class="i-mdi-chevron-right chevron"></text>
-					</button>
+		
 					<button class="option-item">
 						<view class="option-icon-bg purple">
 							<text class="i-mdi-help-circle"></text>
@@ -116,7 +111,6 @@ const user = computed(() => store.user);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 20rpx 48rpx;
 	background-color: rgba(246, 248, 247, 0.8);
 	backdrop-filter: blur(8px);
 }
@@ -148,7 +142,7 @@ const user = computed(() => store.user);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 16rpx 48rpx 64rpx;
+	padding: 16rpx var(--spacing-base) 64rpx;
 }
 .avatar-container {
 	position: relative;
@@ -206,7 +200,7 @@ const user = computed(() => store.user);
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 32rpx;
-	padding: 0 48rpx 64rpx;
+	padding: 0 var(--spacing-base) 64rpx;
 }
 .stat-card {
 	background-color: var(--surface-light);
@@ -245,7 +239,7 @@ const user = computed(() => store.user);
 	display: flex;
 	flex-direction: column;
 	gap: 32rpx;
-	padding: 0 48rpx;
+	padding: 0 var(--spacing-base);
 }
 .option-card-progress {
 	background-color: var(--surface-light);

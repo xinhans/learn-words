@@ -80,7 +80,7 @@
 
 <style>
 .page-container {
-	height: 100vh;
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	background-color: var(--background-light);
@@ -129,7 +129,7 @@
 
 /* Progress Section */
 .progress-section {
-	padding: 16rpx 48rpx;
+	padding: 16rpx var(--spacing-base);
 	flex-shrink: 0;
 }
 .progress-header {
@@ -237,7 +237,7 @@
 }
 .word-details {
 	flex: 1;
-	padding: 16rpx 48rpx 32rpx;
+	padding: 16rpx var(--spacing-base) 32rpx;
 	text-align: center;
 	display: flex;
 	flex-direction: column;
@@ -328,7 +328,7 @@
 .action-buttons {
 	display: flex;
 	gap: 32rpx;
-	padding: 24rpx 48rpx;
+	padding: 24rpx var(--spacing-base);
 	flex-shrink: 0;
 }
 .action-button {
