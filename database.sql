@@ -5,6 +5,7 @@ CREATE TABLE `users` (
   `signature` VARCHAR(255) COMMENT '个性签名',
   `check_in_days` INT DEFAULT 0 COMMENT '连续打卡天数',
   `total_learning_minutes` INT DEFAULT 0 COMMENT '累计学习时长（分钟），对应42小时15分',
+  `open_id` VARCHAR(64) COMMENT '用户OpenID，用于关联微信登录',
   `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
@@ -29,12 +30,14 @@ CREATE TABLE `words` (
   `example_sentence` TEXT COMMENT '日文例句',
   `example_translation` TEXT COMMENT '日文例句翻译',
   `audio_url` VARCHAR(255) COMMENT '读音URL',
+  `sort_order` INT NOT NULL DEFAULT 0 COMMENT '排序权重，值越大越靠前',
   `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   FOREIGN KEY (`word_bank_id`) REFERENCES `word_banks`(`id`),
   INDEX `idx_words_word_bank_id` (`word_bank_id`), -- 优化词库查询
   INDEX `idx_words_word` (`word`), -- 优化单词搜索
-  INDEX `idx_words_kana` (`kana`) -- 优化假名搜索
+  INDEX `idx_words_kana` (`kana`), -- 优化假名搜索
+  UNIQUE KEY `uk_word_bank_order` (`word_bank_id`, `sort_order`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='单词表';
 
 CREATE TABLE `user_word_progress` (
@@ -75,6 +78,7 @@ CREATE TABLE `learning_reminders` (
   `user_id` BIGINT NOT NULL COMMENT '用户ID',
   `day_of_week` ENUM('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday') NOT NULL COMMENT '星期几',
   `reminder_time` TIME NOT NULL COMMENT '提醒时间',
+  `reminder_time_final` TIME NOT NULL COMMENT '最终提醒时间',
   `is_active` BOOLEAN NOT NULL DEFAULT TRUE COMMENT '是否激活',
   `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
@@ -105,3 +109,9 @@ CREATE TABLE `word_review` (
   FOREIGN KEY (`word_id`) REFERENCES `words`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='复习题目表';
 
+CREATE TABLE `word_daily` (
+  `id` BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '每日单词ID',
+  `word_id` BIGINT NOT NULL COMMENT '单词ID',
+  `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='每日单词表'; -- 修正了表注释
