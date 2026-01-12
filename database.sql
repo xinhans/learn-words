@@ -93,3 +93,14 @@ CREATE TABLE `feedback` (
   INDEX `idx_feedback_status` (`status`), -- 优化状态查询
   INDEX `idx_feedback_created_at` (`created_at`) -- 优化时间查询
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户反馈表';
+
+CREATE TABLE `review_questions` (
+  `id` BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '题目ID',
+  `word_id` BIGINT NOT NULL COMMENT '关联的单词ID',
+  `options` JSON NOT NULL COMMENT '四个中文释义选项，数组形式',
+  `correct_option_index` TINYINT NOT NULL COMMENT '正确选项的索引 (0-3)',
+  `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  UNIQUE KEY `word_id_unique` (`word_id`),
+  FOREIGN KEY (`word_id`) REFERENCES `words`(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='复习题目表';
