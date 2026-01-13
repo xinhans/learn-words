@@ -71,6 +71,7 @@
     "@vue/runtime-core": "^3.4.21",
     "google-fonts-helper": "^3.7.3",
     "google-webfonts-helper": "^0.0.1-security",
+    "unocss-preset-weapp": "^66.0.2",
     "vite": "5.2.8"
   }
 }
